@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daily Grind — On-campus coffee shop · Loughborough Students' Union</title>
+<meta name="description" content="Daily Grind is the on-campus coffee shop at Loughborough Students' Union. Coffee, cold drinks, freshly baked cakes. In the old Santander building behind LSU. Mon–Fri 8–6, Sat–Sun 10–5.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EFE6;
+    --paper-warm:#E9DFC9;
+    --concrete:#5E5E5E;
+    --concrete-deep:#3A3A3A;
+    --ink:#1A1614;
+    --ember:#C75B12;
+    --cream-deep:#E9D5A1;
+    --rule:rgba(26,22,20,0.18);
+    --rhythm:clamp(1rem,.7rem + .8vw,1.18rem);
+    --display:"Bricolage Grotesque","Times New Roman",serif;
+    --body:"Newsreader",Georgia,serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:var(--rhythm);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:.045;
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--ink) 1px, transparent 0);
+    background-size:3px 3px;
+    mix-blend-mode:multiply;
+  }
+
+  h1,h2,h3,h4{
+    font-family:var(--display);
+    font-weight:800;
+    letter-spacing:-0.025em;
+    line-height:.95;
+    text-wrap:balance;
+    color:var(--ink);
+  }
+  p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+
+  a{color:inherit}
+  a.tel,a.map{
+    color:var(--ember);
+    text-decoration:none;
+    border-bottom:1.5px solid currentColor;
+    padding-bottom:1px;
+    transition:color .2s,border-color .2s;
+  }
+  a.tel:hover,a.map:hover{color:var(--ink);border-color:var(--ink)}
+
+  /* ── shell ─────────────────────────────────────────────────────── */
+  .wrap{
+    max-width:1240px;
+    margin-inline:auto;
+    padding-inline:clamp(1.25rem,3vw,2.5rem);
+    position:relative;
+    z-index:2;
+  }
+
+  /* ── nav ───────────────────────────────────────────────────────── */
+  nav.top{
+    padding-block:1.4rem;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:1rem;
+    border-bottom:1px solid var(--rule);
+  }
+  nav.top .mark{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:1.05rem;
+    letter-spacing:-.02em;
+    text-transform:uppercase;
+  }
+  nav.top .mark span{color:var(--ember)}
+  nav.top .where{
+    font-family:var(--body);
+    font-size:.78rem;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--concrete);
+  }
+
+  /* ── hero ──────────────────────────────────────────────────────── */
+  .hero{
+    padding-block:clamp(2.2rem,6vw,5rem) clamp(2rem,5vw,4rem);
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-family:var(--body);
+    font-style:italic;
+    font-size:1.05rem;
+    color:var(--concrete);
+    margin-bottom:1.6rem;
+    letter-spacing:.01em;
+  }
+  .hero .eyebrow::before{
+    content:"";
+    display:inline-block;
+    width:2.4rem;
+    height:1px;
+    background:var(--concrete);
+    margin-right:.9rem;
+    transform:translateY(-.32em);
+  }
+  .hero h1{
+    font-size:clamp(4.2rem,17vw,16rem);
+    font-weight:800;
+    letter-spacing:-.045em;
+    line-height:.86;
+    font-variation-settings:"opsz" 96;
+  }
+  .hero h1 .line2{
+    display:block;
+    color:var(--concrete);
+    padding-left:clamp(1rem,8vw,7rem);
+  }
+  .hero h1 .line2 em{
+    font-style:normal;
+    color:var(--ember);
+  }
+  .hero .lede{
+    margin-top:clamp(1.6rem,3vw,2.4rem);
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1.4rem;
+  }
+  @media(min-width:780px){
+    .hero .lede{
+      grid-template-columns:1.4fr 1fr;
+      gap:3rem;
+    }
+  }
+  .hero .lede p{
+    font-size:clamp(1.15rem,1.4vw + .9rem,1.5rem);
+    font-family:var(--body);
+    font-weight:400;
+    line-height:1.45;
+    color:var(--ink);
+    max-width:48ch;
+  }
+  .hero .lede p em{
+    font-style:italic;
+    color:var(--ember);
+  }
+  .hero .meta{
+    display:flex;
+    flex-direction:column;
+    gap:.65rem;
+    font-size:.88rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--concrete);
+    font-family:var(--display);
+    font-weight:500;
+  }
+  .hero .meta span:first-child{color:var(--ink)}
+  .hero .meta b{
+    font-weight:700;
+    color:var(--ink);
+    display:block;
+    font-size:1rem;
+    letter-spacing:-.005em;
+    text-transform:none;
+    font-family:var(--display);
+    margin-bottom:.15rem;
+  }
+
+  /* ── marquee strip ─────────────────────────────────────────────── */
+  .strip{
+    background:var(--ink);
+    color:var(--paper);
+    padding-block:1.1rem;
+    overflow:hidden;
+    border-block:1px solid var(--ink);
+    margin-top:clamp(2rem,4vw,3rem);
+  }
+  .strip__track{
+    display:inline-flex;
+    align-items:center;
+    gap:3rem;
+    white-space:nowrap;
+    animation:scroll 38s linear infinite;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.6rem,2.6vw,2.4rem);
+    letter-spacing:-.015em;
+    text-transform:uppercase;
+  }
+  .strip__track span{display:inline-block}
+  .strip__track .dot{
+    width:.5rem;height:.5rem;
+    background:var(--ember);
+    border-radius:50%;
+    display:inline-block;
+    transform:translateY(-.18em);
+  }
+  @keyframes scroll{
+    to{ transform:translateX(-50%); }
+  }
+
+  /* ── section base ──────────────────────────────────────────────── */
+  section{
+    padding-block:clamp(3.5rem,8vw,7rem);
+    position:relative;
+  }
+  .sec-head{
+    display:flex;
+    align-items:flex-end;
+    gap:1.2rem;
+    margin-bottom:clamp(2rem,4vw,3.4rem);
+    flex-wrap:wrap;
+  }
+  .sec-head .num{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.85rem;
+    letter-spacing:.18em;
+    color:var(--ember);
+    text-transform:uppercase;
+  }
+  .sec-head h2{
+    font-size:clamp(2.5rem,5.5vw,5.2rem);
+    font-weight:800;
+    flex:1 1 auto;
+  }
+  .sec-head h2 em{font-style:italic;color:var(--concrete);font-weight:500}
+
+  /* ── what we serve ────────────────────────────────────────────── */
+  .serve{
+    background:var(--paper);
+    border-top:1px solid var(--rule);
+  }
+  .serve .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:0;
+    border-top:2px solid var(--ink);
+  }
+  @media(min-width:760px){
+    .serve .grid{grid-template-columns:repeat(3,1fr)}
+  }
+  .serve article{
+    padding:clamp(1.6rem,3vw,2.4rem) clamp(1.2rem,2vw,1.8rem);
+    border-bottom:1px solid var(--rule);
+    position:relative;
+  }
+  @media(min-width:760px){
+    .serve article + article{
+      border-left:1px solid var(--rule);
+    }
+  }
+  .serve article .idx{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:.78rem;
+    letter-spacing:.2em;
+    color:var(--concrete);
+    text-transform:uppercase;
+    margin-bottom:1.2rem;
+    display:flex;
+    align-items:center;
+    gap:.7rem;
+  }
+  .serve article .idx::before{
+    content:"";
+    width:.42rem;height:.42rem;
+    background:var(--ember);
+    border-radius:50%;
+  }
+  .serve article h3{
+    font-size:clamp(2rem,3.6vw,3rem);
+    margin-bottom:.6rem;
+    letter-spacing:-.03em;
+  }
+  .serve article h3 em{
+    font-family:var(--body);
+    font-style:italic;
+    font-weight:400;
+    color:var(--concrete);
+    font-size:.55em;
+    display:block;
+    margin-top:.4rem;
+    letter-spacing:0;
+  }
+  .serve article p{
+    font-size:1.02rem;
+    color:var(--concrete-deep);
+    line-height:1.6;
+  }
+
+  /* ── story / "the old Santander building" ─────────────────────── */
+  .story{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .story::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(244,239,230,.13) 1px, transparent 0);
+    background-size:4px 4px;
+    pointer-events:none;
+  }
+  .story .sec-head h2{color:var(--paper)}
+  .story .sec-head h2 em{color:var(--cream-deep)}
+  .story .sec-head .num{color:var(--ember)}
+  .story .cols{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(2rem,4vw,3.5rem);
+  }
+  @media(min-width:820px){
+    .story .cols{grid-template-columns:1fr 1fr;align-items:start}
+  }
+  .story .cols p{
+    font-size:clamp(1.05rem,1.1vw + .8rem,1.4rem);
+    line-height:1.55;
+    color:var(--paper);
+    max-width:54ch;
+    margin-bottom:1.2rem;
+  }
+  .story .cols p em{
+    font-family:var(--display);
+    font-style:normal;
+    font-weight:700;
+    color:var(--ember);
+    letter-spacing:-.005em;
+  }
+  .story .pull{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(2.4rem,4.4vw,4.2rem);
+    line-height:.95;
+    letter-spacing:-.035em;
+    color:var(--cream-deep);
+    text-wrap:balance;
+  }
+  .story .pull span{display:block;color:var(--paper)}
+  .story .pull span.q{color:var(--ember)}
+
+  /* ── visit / find us ───────────────────────────────────────────── */
+  .visit{background:var(--paper-warm)}
+  .visit .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:clamp(2rem,4vw,3.2rem);
+  }
+  @media(min-width:840px){
+    .visit .grid{grid-template-columns:1.3fr 1fr;align-items:start}
+  }
+  .visit h3{
+    font-size:clamp(1.4rem,1.8vw + .6rem,2rem);
+    margin-bottom:1rem;
+    letter-spacing:-.02em;
+  }
+  .visit .where-block p{
+    font-size:1.1rem;
+    line-height:1.6;
+    margin-bottom:1.1rem;
+    max-width:42ch;
+  }
+  .visit .address{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:clamp(1.3rem,1.4vw + .7rem,1.7rem);
+    line-height:1.25;
+    letter-spacing:-.02em;
+    margin-top:1.6rem;
+    padding-top:1.4rem;
+    border-top:2px solid var(--ink);
+    max-width:30ch;
+  }
+  .visit .address .postcode{color:var(--ember)}
+
+  .hours-card{
+    background:var(--paper);
+    border:1.5px solid var(--ink);
+    padding:clamp(1.6rem,2.5vw,2.2rem);
+  }
+  .hours-card h3{
+    font-size:1.05rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--concrete);
+    font-weight:500;
+    margin-bottom:1.4rem;
+    font-family:var(--display);
+  }
+  .hours-card dl{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:.85rem 1.6rem;
+    font-family:var(--display);
+  }
+  .hours-card dt{
+    font-weight:500;
+    color:var(--concrete);
+    font-size:.95rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+  }
+  .hours-card dd{
+    font-weight:700;
+    font-size:1.15rem;
+    text-align:right;
+    letter-spacing:-.01em;
+    color:var(--ink);
+  }
+  .hours-card .note{
+    margin-top:1.6rem;
+    padding-top:1.2rem;
+    border-top:1px solid var(--rule);
+    font-family:var(--body);
+    font-style:italic;
+    font-size:.95rem;
+    color:var(--concrete-deep);
+    max-width:none;
+  }
+
+  /* ── footer / letterhead ───────────────────────────────────────── */
+  footer{
+    background:var(--ink);
+    color:var(--paper);
+    padding-block:clamp(3rem,6vw,5rem);
+    overflow:hidden;
+    position:relative;
+  }
+  footer .foot-mark{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(3.4rem,12vw,11rem);
+    letter-spacing:-.045em;
+    line-height:.88;
+    color:var(--paper);
+    margin-bottom:clamp(2rem,4vw,3rem);
+    font-variation-settings:"opsz" 96;
+  }
+  footer .foot-mark em{
+    font-style:normal;
+    color:var(--ember);
+  }
+  footer .foot-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2rem;
+    border-top:1px solid rgba(244,239,230,.18);
+    padding-top:clamp(1.6rem,3vw,2.4rem);
+  }
+  @media(min-width:760px){
+    footer .foot-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  footer .foot-grid h4{
+    font-size:.78rem;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--cream-deep);
+    font-weight:500;
+    margin-bottom:.9rem;
+    font-family:var(--display);
+  }
+  footer .foot-grid p,
+  footer .foot-grid .line{
+    font-family:var(--body);
+    font-size:1.02rem;
+    line-height:1.55;
+    color:var(--paper);
+  }
+  footer .colophon{
+    margin-top:clamp(2.4rem,4vw,3.4rem);
+    padding-top:1.4rem;
+    border-top:1px solid rgba(244,239,230,.18);
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+    font-size:.8rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:rgba(244,239,230,.55);
+    font-family:var(--display);
+    font-weight:500;
+  }
+
+  /* ── scroll reveal (progressive enhancement) ───────────────────── */
+  @supports (animation-timeline: view()) {
+    .reveal{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 28%;
+    }
+    @keyframes rise{
+      from{opacity:0;transform:translateY(2rem)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+    }
+    .strip__track{animation:none;justify-content:center;flex-wrap:wrap}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="top">
+    <div class="mark">Daily <span>·</span> Grind</div>
+    <div class="where">Loughborough · LE11 3TT</div>
+  </nav>
+</div>
+
+<header class="hero wrap">
+  <div class="eyebrow">An on-campus coffee shop. Behind the Students' Union.</div>
+  <h1>
+    Daily<br>
+    <span class="line2">Gri<em>n</em>d</span>
+  </h1>
+  <div class="lede">
+    <p>
+      Coffee, cold drinks and cakes baked fresh that morning — <em>served from the old Santander branch</em> at the back of Loughborough Students' Union, next to the nursery. There's a terrace if the weather plays.
+    </p>
+    <div class="meta">
+      <span><b>Open today</b>Mon&ndash;Fri · 8 til 6</span>
+      <span><b>Weekends</b>Sat&ndash;Sun · 10 til 5</span>
+      <span><b>Service</b>Sit-in · Takeaway · Terrace</span>
+    </div>
+  </div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip__track">
+    <span>Coffee</span><span class="dot"></span>
+    <span>Cold drinks</span><span class="dot"></span>
+    <span>Freshly baked cakes</span><span class="dot"></span>
+    <span>Sit-in &amp; takeaway</span><span class="dot"></span>
+    <span>Terrace seating</span><span class="dot"></span>
+    <span>Open from 8</span><span class="dot"></span>
+    <span>Coffee</span><span class="dot"></span>
+    <span>Cold drinks</span><span class="dot"></span>
+    <span>Freshly baked cakes</span><span class="dot"></span>
+    <span>Sit-in &amp; takeaway</span><span class="dot"></span>
+    <span>Terrace seating</span><span class="dot"></span>
+    <span>Open from 8</span><span class="dot"></span>
+  </div>
+</div>
+
+<section class="serve">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num">01 — Counter</div>
+      <h2>What we <em>pour, pull and pull&#8209;apart</em>.</h2>
+    </div>
+    <div class="grid">
+      <article class="reveal">
+        <div class="idx">Hot</div>
+        <h3>Coffee
+          <em>The actual daily grind.</em>
+        </h3>
+        <p>Espresso through to flat whites, cappuccinos and the long order you'll learn off by heart by week three. Made properly, made quick — because the lecture starts at five past.</p>
+      </article>
+      <article class="reveal">
+        <div class="idx">Cold</div>
+        <h3>Cold drinks
+          <em>For summer term and stress weeks.</em>
+        </h3>
+        <p>Iced coffees, soft drinks, juice — the lineup that gets you across campus in May without melting. Pulled from the chiller, in a cup, out the door.</p>
+      </article>
+      <article class="reveal">
+        <div class="idx">Bake</div>
+        <h3>Cakes
+          <em>Freshly baked. Daily.</em>
+        </h3>
+        <p>A counter of cakes baked that morning. What's on it depends on the day, the weather and the baker — that's the point of fresh. Come and look.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num">02 — Backstory</div>
+      <h2>It used to be a <em>bank</em>.</h2>
+    </div>
+    <div class="cols">
+      <div class="reveal">
+        <p>
+          The Daily Grind sits in <em>the old Santander branch</em> at the back of the Students' Union — the building right next to the nursery. Same bones, new purpose: where students used to queue to pay rent, they now queue for a flat white before the 9am.
+        </p>
+        <p>
+          We're part of LSU — student-run, student-priced, student-paced. The terrace catches the afternoon sun, the indoor seats fill up around revision week, and the door's open from eight in the morning.
+        </p>
+      </div>
+      <div class="pull reveal">
+        Where the <span class="q">cashpoints</span><br>
+        <span>once were —</span>
+        <span class="q">the espresso</span><br>
+        <span>machine now hisses.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="num">03 — Visit</div>
+      <h2>Find us <em>at the back</em>.</h2>
+    </div>
+    <div class="grid">
+      <div class="where-block reveal">
+        <h3>How to find it</h3>
+        <p>
+          Walk through the Students' Union and keep going — the Daily Grind is in the building behind, the one that used to be Santander, sat right next to the nursery. There's a terrace out front; you can usually hear the espresso machine before you see the door.
+        </p>
+        <p>
+          Cycling in? Stands are at the back of LSU. Driving? The campus is signposted off the A6 — once you're on, follow signs for the Students' Union.
+        </p>
+        <div class="address">
+          Loughborough Students' Union<br>
+          Ashby Road<br>
+          Loughborough<br>
+          <span class="postcode">LE11&nbsp;3TT</span>
+        </div>
+      </div>
+      <aside class="hours-card reveal">
+        <h3>Opening hours</h3>
+        <dl>
+          <dt>Mon</dt><dd>8 — 6</dd>
+          <dt>Tue</dt><dd>8 — 6</dd>
+          <dt>Wed</dt><dd>8 — 6</dd>
+          <dt>Thu</dt><dd>8 — 6</dd>
+          <dt>Fri</dt><dd>8 — 6</dd>
+          <dt>Sat</dt><dd>10 — 5</dd>
+          <dt>Sun</dt><dd>10 — 5</dd>
+        </dl>
+        <p class="note">Term-time hours. Vacation hours can vary — best to check with the SU on the day.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-mark reveal">Daily<em>·</em>Grind</div>
+    <div class="foot-grid">
+      <div>
+        <h4>Where</h4>
+        <p class="line">
+          Loughborough Students' Union<br>
+          Ashby Road<br>
+          Loughborough<br>
+          LE11&nbsp;3TT
+        </p>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <p class="line">
+          Mon&ndash;Fri · 8am – 6pm<br>
+          Sat&ndash;Sun · 10am – 5pm
+        </p>
+      </div>
+      <div>
+        <h4>Part of</h4>
+        <p class="line">
+          Loughborough Students' Union catering &mdash; on-campus coffee, daily.
+        </p>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>The Daily Grind · Loughborough · est. on campus</span>
+      <span>Built with care · 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
